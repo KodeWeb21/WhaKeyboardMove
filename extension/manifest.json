@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "WhatsApp Keyboard Navigator",
+  "version": "1.0.0",
+  "description": "Navigate WhatsApp Web with the keyboard: Ctrl+Right opens the highlighted chat, Ctrl+Left returns to the chat list, arrows move between chats and messages.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["src/dom.js", "src/navigation.js", "src/content.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
